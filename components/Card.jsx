@@ -2,8 +2,14 @@ import React from "react";
 import Image from "next/image";
 const Card = () => {
   return (
-    <div className="w-[200px] m-5">
-      <Image src="/hoody.webp" alt="hoody" width="200" height="400" />
+    <div className="w-[300px] m-5">
+      <Image
+        src="/hoody.webp"
+        alt="hoody"
+        width="300"
+        height="400"
+        className="rounded-sm"
+      />
       <h6 className=" text-xs">Hoody</h6>
       <div className="flex justify-between">
         <h1 className=" font-semibold text-lg">Rage</h1>
@@ -15,7 +21,7 @@ const Card = () => {
       <div className=" flex items-center justify-center w-5 h-5 bg-slate-300">
         s
       </div>
-      <div className="flex justify-between px-3 py-2 bg-black text-white my-3">
+      <div className="flex justify-between px-3 py-2 bg-black text-white my-3 rounded-sm">
         <div className="font-semibold text-lg">view product</div>
         <div>+</div>
       </div>
