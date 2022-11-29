@@ -90,14 +90,46 @@ export default function Home() {
           <h1 className=" text-5xl font-bold">Best Seller</h1>
         </div>
         <div className=" flex justify-center flex-wrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {loading ? (
+            <Loading />
+          ) : error ? (
+            <div className="toast toast-top toast-end">
+              <div className="alert alert-info">
+                <div>
+                  <span>{error}</span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className=" flex justify-center flex-wrap">
+              {products?.map(
+                ({
+                  name,
+                  description,
+                  slug,
+                  brand,
+                  category,
+                  numReviews,
+                  rating,
+                  price,
+                  image,
+                }) => (
+                  <Card
+                    key={slug}
+                    name={name}
+                    description={description}
+                    brand={brand}
+                    category={category}
+                    numReviews={numReviews}
+                    rating={rating}
+                    price={price}
+                    slug={slug}
+                    image={image}
+                  />
+                )
+              )}
+            </div>
+          )}
         </div>
         <div className="flex items-center justify-center my-5">
           <a className=" bg-black px-3 py-2 rounded-sm text-white">view More</a>

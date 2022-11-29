@@ -1,10 +1,17 @@
 import React from "react";
-
-const Carousels = () => {
+import Image from "next/image";
+import { urlForThumbnail } from "../utills/image";
+const Carousels = ({ image }) => {
   return (
     <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
-        <img src="https://placeimg.com/800/200/arch" className="w-full" />
+        <Image
+          src={image ? urlForThumbnail(image) : ""}
+          alt="hoody"
+          width="300"
+          height="400"
+          className="rounded-sm"
+        />
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide4" className="btn btn-circle">
             ❮
